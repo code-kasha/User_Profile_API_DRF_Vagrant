@@ -5,6 +5,9 @@ from django.db import models
 
 class UserProfileManager(BaseUserManager):
 
+    class Meta:
+        model = "UserProfile"
+
     def create_user(self, email, name, password=None):
         if not email:
             raise ValueError("Users must have an email address")
