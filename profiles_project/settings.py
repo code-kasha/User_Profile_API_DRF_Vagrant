@@ -1,10 +1,11 @@
+import os
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = '&3^zli_4^)hl5@#vh-o5(41@wk)ya=-7nlwt2=4l60z7e(i_&('
 
-DEBUG = True
+DEBUG = bool(int(os.enviorn.get('DEBUG', 1)))
 
 ALLOWED_HOSTS = []
 
@@ -86,3 +87,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = "profiles_api.UserProfile"
+
+STATIC_ROOT = BASE_DIR / 'static'
